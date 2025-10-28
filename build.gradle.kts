@@ -14,6 +14,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
   alias(libs.plugins.kotlin.jvm)
   id("java-gradle-plugin")
+    `kotlin-dsl`
+    `java-gradle-plugin`
 }
 
 tasks.withType<KotlinCompile>().configureEach {
@@ -40,10 +42,12 @@ gradlePlugin {
   }
 }
 
-group = "com.facebook.react"
+group = "com.github.k2kimbro"
+version = "1.0.0"
 
 dependencies {
   implementation(gradleApi())
+  implementation(localGroovy())
 
   // The KGP/AGP version is defined by React Native Gradle plugin.
   // Therefore we specify an implementation dep rather than a compileOnly.
