@@ -14,6 +14,7 @@ plugins {
   kotlin("jvm") version "1.6.21"
     `java-gradle-plugin`
     `kotlin-dsl`
+    `maven-publish`
   }
 
 tasks.withType<KotlinCompile>().configureEach {
@@ -25,6 +26,7 @@ tasks.withType<KotlinCompile>().configureEach {
 repositories {
   google()
   mavenCentral()
+  gradlePluginPortal()
 }
 
 gradlePlugin {
@@ -36,6 +38,10 @@ gradlePlugin {
     create("reactrootproject") {
       id = "com.facebook.react.rootproject"
       implementationClass = "com.facebook.react.ReactRootProjectPlugin"
+    }
+    create("reactPlugin") {
+      id = "com.facebook.react.gradle.plugin"
+      implementationClass = "com.facebook.react.ReactGradlePlugin"
     }
   }
 }
