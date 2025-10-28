@@ -24,7 +24,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 tasks.withType<KotlinJvmCompile>().configureEach {
     compilerOptions {
         allWarningsAsErrors.set(true)
-        apiVersion.set(KotlinVersion.KOTLIN_1_8)
+        apiVersion.set(KotlinVersion.KOTLIN_2_0)
         jvmTarget.set(JvmTarget.JVM_11)
     }
 }
@@ -82,4 +82,3 @@ sourceSets {
         java.srcDirs("src/main/kotlin")
     }
 }
-
