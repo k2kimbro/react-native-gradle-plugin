@@ -51,14 +51,6 @@ dependencies {
 
   // The KGP/AGP version is defined by React Native Gradle plugin.
   // Therefore we specify an implementation dep rather than a compileOnly.
-  implementation(libs.kotlin.gradle.plugin)
-  implementation(libs.android.gradle.plugin)
-
-  implementation(libs.gson)
-  implementation(libs.guava)
-  implementation(libs.javapoet)
-
-  testImplementation(libs.junit)
 }
 
 // We intentionally don't build for Java 17 as users will see a cryptic bytecode version
