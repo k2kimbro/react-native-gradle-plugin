@@ -9,14 +9,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 import org.gradle.api.internal.classpath.ModuleRegistry
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm") version "1.6.21"
-  id("java-gradle-plugin")
-    `kotlin-dsl`
     `java-gradle-plugin`
-}
+    `kotlin-dsl`
+  }
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
@@ -57,8 +55,6 @@ dependencies {
 // error first. Instead we produce a Java 11-compatible Gradle Plugin, so that AGP can print their
 // nice message showing that JDK 11 (or 17) is required first
 java { targetCompatibility = JavaVersion.VERSION_11 }
-
-kotlin { jvmToolchain(17) }
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
