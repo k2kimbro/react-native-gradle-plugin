@@ -12,7 +12,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  alias(libs.plugins.kotlin.jvm)
+  kotlin("jvm") version "1.9.10"
   id("java-gradle-plugin")
     `kotlin-dsl`
     `java-gradle-plugin`
