@@ -8,8 +8,8 @@ version = '1.0.0'
 
 gradlePlugin {
     plugins {
-        reactPlugin {
-            id = 'com.facebook.react'
+        archivesPlugin {
+            id = 'com.appalachianarchives.react'
             implementationClass = 'com.facebook.react.ReactPlugin'
         }
     }

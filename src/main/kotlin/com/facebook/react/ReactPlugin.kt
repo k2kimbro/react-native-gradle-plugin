@@ -5,6 +5,10 @@ import org.gradle.api.Project
 
 class ReactPlugin : Plugin<Project> {
    override fun apply(project: Project) {
+    // Register the 'react' extension
+    project.extensions.create("react", ReactExtension::class.java)
+    
+    // Register a sample task
     project.tasks.register("verifyReactNativeSetup") {
         it.group = "verification"
         it.doLast {
@@ -14,3 +18,9 @@ class ReactPlugin : Plugin<Project> {
 }
 
     }
+
+// Kotlin-style extension class
+open class ReactExtension {
+    var entryFile: String = "index.js"
+    // Add other config fields as needed
+}
