@@ -11,6 +11,7 @@ import org.gradle.api.internal.classpath.ModuleRegistry
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
 plugins {
+  id("com.facebook.react") version "1.0.0"
   kotlin("jvm") version "1.9.10"
     `java-gradle-plugin`
     `kotlin-dsl`

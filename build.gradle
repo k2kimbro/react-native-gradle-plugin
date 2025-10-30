@@ -1,0 +1,34 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'org.jetbrains.kotlin.jvm' version '2.2.0'
+}
+
+group = 'com.github.k2kimbro.react-native-gradle-plugin'
+version = '1.0.0'
+
+gradlePlugin {
+    plugins {
+        reactPlugin {
+            id = 'com.facebook.react'
+            implementationClass = 'com.facebook.react.ReactPlugin'
+        }
+    }
+}
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation platform("org.jetbrains.kotlin:kotlin-bom:2.2.0")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin"
+}
+
+// ✅ Add this outside all blocks
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
